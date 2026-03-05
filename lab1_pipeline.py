@@ -35,7 +35,7 @@ def write_data_line_by_line(data):
     
     # TODO 1: Add a variable 'start_time' below to record the starting time.
     # Hint: Use time.time()
-    
+    start_time = time.time()
     
     for row in data:
         # Opening the file in every iteration is an anti-pattern for edge systems.
@@ -45,9 +45,10 @@ def write_data_line_by_line(data):
             
     # TODO 2: Add a variable 'end_time' below, and calculate the total duration (in seconds).
     # Hint: duration = end_time - start_time
-    
+    end_time = time.time()
+    duration = end_time - start_time
     # print(f"    -> [Result] Line-by-line write duration: {duration:.4f} seconds")
-
+    print(f"    -> [Result] Line-by-line write duration: {duration:.4f} seconds")
 
 def write_data_in_bulk(data):
     """
@@ -57,7 +58,7 @@ def write_data_in_bulk(data):
     print("\n[*] Test 2: Bulk/Batch Write...")
     
     # TODO 3: Add a variable 'start_time' below to record the starting time.
-    
+    start_time = time.time()
     
     # Opens the file only once and dumps the entire array from memory to disk.
     with open(FILE_NAME, mode='a', newline='') as file:
@@ -65,9 +66,10 @@ def write_data_in_bulk(data):
         writer.writerows(data) 
         
     # TODO 4: Add a variable 'end_time' below, and calculate the total duration (in seconds).
-    
+    end_time = time.time()
+    duration = end_time - start_time
     # print(f"    -> [Result] Bulk write duration: {duration:.4f} seconds")
-
+    print(f"    -> [Result] Line-by-line write duration: {duration:.4f} seconds")
 
 if __name__ == "__main__":
     # Ensure a clean environment before testing
